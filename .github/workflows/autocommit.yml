@@ -1,0 +1,45 @@
+name: Build and Deploy Blog
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 北京时间 01:00 
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Update git submodules
+        run: |
+          git submodule update --init --recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y make
+          pip install -r py/requirements.txt
+
+      - name: Set up environment variables
+        run: |
+          echo "NOTION_DB_ID=${{ secrets.NOTION_DB_ID }}" >> .env
+          echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" > .env
+          source .env
+
+      - name: Build blog
+        run: |
+          make convert && make build
+
+      - name: Commit and push public changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public
+          git commit -m "Auto: update public directory" || echo "No changes to commit"
+          git push

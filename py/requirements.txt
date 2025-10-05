@@ -1,0 +1,5 @@
+httpx
+notion-client
+PyYAML
+click
+git+https://github.com/polym/notion2md.git
