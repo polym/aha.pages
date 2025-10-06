@@ -3,6 +3,7 @@ name: Build and Deploy Blog
 on:
   schedule:
     - cron: '0 9 * * *' # 北京时间 01:00 
+  workflow_dispatch:
 
 jobs:
   build-deploy:
