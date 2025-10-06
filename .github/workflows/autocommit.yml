@@ -29,8 +29,8 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "NOTION_DB_ID=${{ secrets.NOTION_DB_ID }}" >> .env
-          echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" > .env
+          echo "NOTION_DB_ID=${{ secrets.NOTION_DB_ID }}" > .env
+          echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" >> .env
           source .env
 
       - name: Build blog
