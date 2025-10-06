@@ -31,7 +31,8 @@ jobs:
         run: |
           echo "NOTION_DB_ID=${{ secrets.NOTION_DB_ID }}" > .env
           echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" >> .env
-          source .env
+          echo "NOTION_DB_ID=${{ secrets.NOTION_DB_ID }}" >> $GITHUB_ENV
+          echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" >> $GITHUB_ENV
 
       - name: Build blog
         run: |
