@@ -2,7 +2,7 @@ name: Build and Deploy Blog
 
 on:
   schedule:
-    - cron: '0 9 * * *' # 北京时间 01:00 
+    - cron: '0 17 * * *' # 北京时间 01:00
   workflow_dispatch:
 
 jobs:
@@ -50,4 +50,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: Sync content with Notion
-          file_pattern: 'hugo-site/public'
+          file_pattern: 'hugo-site/content/'
