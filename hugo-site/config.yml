@@ -2,3 +2,19 @@ baseURL: https://aha.qingy.ing/
 languageCode: en-us
 title: Aha Moment
 theme: ["PaperMod"]
+
+# PaperMod theme settings
+params:
+  defaultTheme: dark
+  disableThemeToggle: true
+  assets:
+    disableHLJS: true
+  ShowCodeCopyButtons: true
+markup:
+  highlight:
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    # noClasses: false
+    style: monokai

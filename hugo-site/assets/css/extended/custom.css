@@ -1,0 +1,17 @@
+/*
+static
+├── css
+│   └── custom.css
+└── fonts
+    └── jk03.ttf 
+*/
+@font-face {
+  font-family: JinKai;
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/dedaojinkaiw03.ttf') format('truetype');
+} 
+
+body {
+  font-family: 'JinKai', sans-serif;
+}
