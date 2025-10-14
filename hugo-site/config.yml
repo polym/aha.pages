@@ -6,6 +6,8 @@ theme: ["PaperMod"]
 # PaperMod theme settings
 params:
   defaultTheme: dark
+  showtoc: true
+  tocopen: true
   disableThemeToggle: true
   assets:
     disableHLJS: true
