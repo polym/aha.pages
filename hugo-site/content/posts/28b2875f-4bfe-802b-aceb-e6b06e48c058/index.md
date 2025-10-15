@@ -3,7 +3,7 @@ cover:
   image: cover.jpg
 date: '2025-10-13T12:22:00.000Z'
 draft: false
-lastmod: '2025-10-14T14:46:00.000Z'
+lastmod: '2025-10-15T03:45:00.000Z'
 tags:
 - AI
 - PyTorch
@@ -82,4 +82,8 @@ tensor([inf], dtype=torch.float8_e5m2)
 - [[Research] FP8 Quantization Impact Study for DiT Models - Ongoing Results · kohya-ss musubi-tuner · Discussion #564](https://github.com/kohya-ss/musubi-tuner/discussions/564)
 
 - [zhuanlan.zhihu.com](https://zhuanlan.zhihu.com/p/574825662)
+
+- [https://developer.nvidia.com/zh-cn/blog/fp8-challenges-best-practices/](https://developer.nvidia.com/zh-cn/blog/fp8-challenges-best-practices/)
+
+<br/>
 
