@@ -3,7 +3,7 @@ cover:
   image: cover.jpg
 date: '2025-10-13T12:22:00.000Z'
 draft: false
-lastmod: '2025-10-15T03:45:00.000Z'
+lastmod: '2025-10-17T09:20:00.000Z'
 tags:
 - AI
 - PyTorch
