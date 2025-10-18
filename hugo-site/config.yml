@@ -2,6 +2,7 @@ baseURL: https://aha.qingy.ing/
 languageCode: en-us
 title: Aha Moment
 theme: ["PaperMod"]
+enableRobotsTXT: true
 
 # PaperMod theme settings
 params:
@@ -12,11 +13,19 @@ params:
   assets:
     disableHLJS: true
   ShowCodeCopyButtons: true
+  # disable profile mode
+  profileMode:
+     enabled: false
+     imageUrl: "apple-touch-icon.png"
+  # add icon in front of site title
+  label:
+    text: "Aha Moment"
+    icon: "apple-touch-icon.png"
 markup:
   highlight:
     # anchorLineNos: true
     codeFences: true
     guessSyntax: true
-    lineNos: true
+    lineNos: false
     # noClasses: false
     style: monokai
