@@ -3,7 +3,7 @@ cover:
   image: cover.jpg
 date: '2025-09-22T14:21:00.000Z'
 draft: false
-lastmod: '2025-10-08T02:33:00.000Z'
+lastmod: '2025-10-18T23:13:00.000Z'
 tags:
 - Hugo
 - Notion
@@ -51,7 +51,7 @@ https://prod-files-secure.s3.us-west-2.amazonaws.com/dc681554-1505-4cec-9a8f-844
 以下是 Github Action workflow
 
 
-```makefile
+```yaml
 name: Build and Deploy Blog
 
 on:
@@ -117,8 +117,6 @@ jobs:
 - 需要去解决 Notion 中特殊块到 Markdown 的连接
 
 - 对特定 Hugo 主题自定义配置，需要做好适配，初步思路通过 page 的属性字段来实现
-
-<br/>
 
 ## 6. 参考资料
 
