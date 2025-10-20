@@ -18,3 +18,11 @@ images.forEach(img => {
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+{{- partial "code-block-label.html" . -}}
+
+<!-- Custom code copy script -->
+{{ with resources.Get "js/copy-code.js" }}
+  {{ $copyScript := . | minify }}
+  <script src="{{ $copyScript.RelPermalink }}"></script>
+{{ end }}
