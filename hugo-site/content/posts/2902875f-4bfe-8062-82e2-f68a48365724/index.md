@@ -2,8 +2,8 @@
 cover:
   image: cover.jpg
 date: '2025-10-18T01:41:00.000Z'
-draft: true
-lastmod: '2025-10-18T07:05:00.000Z'
+draft: false
+lastmod: '2025-10-20T08:40:00.000Z'
 tags:
 - Comfy
 title: ComfyUI 模型加载分析 & 自定义量化算子
@@ -48,7 +48,7 @@ ComfyUI 接触也有一段时间，决定来手搓一个插件。在搓插件之
 
 > 场景二：将 LoRA 权重加载到 QwenImage 模型后再进行量化。
 
-针对该场景，ComfyUI 原生 UNETLoader 节点，在完成模型加载后就无法再次进行量化，因此无法满足需求。我们需要自己来实现模型加载、LoRA 权重合并以及量化等过程，然后以 ModelPatcher 的形式返回。这里遇到一个问题，需要正确使用 set_inference_dtype 设置 dtype。具体细节不做展开，可以查看 [https://github.com/polym/ComfyUI-musubi/blob/main/modules/nodes.py#L68](https://github.com/polym/ComfyUI-musubi/blob/main/modules/nodes.py#L68)
+针对该场景，ComfyUI 原生 UNETLoader 节点，在完成模型加载后就无法再次进行量化，因此无法满足需求。我们需要自己来实现模型加载、LoRA 权重合并以及量化等过程，然后以 ModelPatcher 的形式返回。这里遇到一个问题，需要正确使用 set_inference_dtype 设置 unet_dtype 和 manual_cast_dtype，其中 unet_dtype 为实际模型加载后的数据类型，manual_cast_dtype 为模型推理时使用的权重。具体细节不做展开，可以查看 [https://github.com/polym/ComfyUI-musubi/blob/main/modules/nodes.py#L68](https://github.com/polym/ComfyUI-musubi/blob/main/modules/nodes.py#L68)
 
 # 其他思考
 
@@ -58,7 +58,7 @@ ComfyUI 接触也有一段时间，决定来手搓一个插件。在搓插件之
 
 1. 如果模型的部分权重被 offload 到 cpu 上，在模型推理时，如何保证运算的数据同时在 cpu 或者 gpu 上？
 
-	首先，Comfy 默认会劫持所有常见的 torch.nn.Module，在 forward 函数中，通过 cast_weight_bias 方法，将 weight 和 bias 的临时变量转成 input 的 dtype 和 device。因此，可以保证所有的运算都会在同一个设备上执行。但是，我们在实际使用 ComfyUI 时还是可能遇到 **Expected all tensors to be on the same device 的报错，这个需要具体问题具体分析。**
+	首先，Comfy 默认会劫持所有常见的 torch.nn.Module，在 forward 函数中，通过 cast_weight_bias 方法，将 weight 和 bias 的临时变量转成与 input tensor 一样的 dtype 和 device。因此，可以保证所有的运算都会在同一个设备上执行并且数据类型一致。当然，我们在实际使用 ComfyUI 时还是可能遇到 **Expected all tensors to be on the same device 的报错，这个需要具体问题具体分析。**
 
 <br/>
 
