@@ -1,0 +1,4 @@
+<div class="highlight" id="{{ printf "code-%d" .Ordinal }}">
+    <button class="copy-code">Copy</button>
+    <pre class="chroma"><code class="{{ if .Type }}language-{{ .Type }}{{ end }}">{{ .Inner }}</code></pre>
+</div>

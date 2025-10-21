@@ -1,0 +1,23 @@
+{{- if not (.Page.Params.hidecodeblocks | default false) -}}
+<script>
+    // Add language label to code blocks
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.highlight').forEach(block => {
+            const classList = Array.from(block.firstElementChild.classList);
+            const langClass = classList.find(c => c.startsWith('language-'));
+            
+            if (langClass) {
+                const language = langClass.replace('language-', '');
+                
+                // Skip adding label for bash/shell/zsh as they'll have the prompt
+                if (!['bash', 'shell', 'zsh'].includes(language)) {
+                    const langLabel = document.createElement('span');
+                    langLabel.className = 'code-language';
+                    langLabel.textContent = language;
+                    block.appendChild(langLabel);
+                }
+            }
+        });
+    });
+</script>
+{{- end -}}
