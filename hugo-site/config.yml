@@ -12,7 +12,7 @@ params:
   disableThemeToggle: true
   assets:
     disableHLJS: true
-  ShowCodeCopyButtons: true
+  ShowCodeCopyButtons: false
   # disable profile mode
   profileMode:
      enabled: false
