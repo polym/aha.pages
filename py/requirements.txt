@@ -1,5 +1,5 @@
 httpx
-notion-client
+notion-client==2.5.0
 PyYAML
 click
 git+https://github.com/polym/notion2md.git

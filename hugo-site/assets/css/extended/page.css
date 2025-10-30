@@ -1,4 +1,12 @@
 :root {
-  --post-width: 33vw;
-  --main-width: 33vw;
+  --post-width: max(38vw, 700px);
+  --main-width: max(38vw, 700px);
+}
+
+/* 响应式设计：在小屏幕设备上使用更大的宽度比例 */
+@media screen and (max-width: 768px) {
+  :root {
+    --post-width: 90vw;
+    --main-width: 90vw;
+  }
 }
