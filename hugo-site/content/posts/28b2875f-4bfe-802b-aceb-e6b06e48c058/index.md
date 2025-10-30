@@ -3,7 +3,7 @@ cover:
   image: cover.jpg
 date: '2025-10-13T12:22:00.000Z'
 draft: false
-lastmod: '2025-10-17T09:20:00.000Z'
+lastmod: '2025-10-23T13:32:00.000Z'
 tags:
 - AI
 - PyTorch
@@ -44,12 +44,12 @@ total_size = num_params * fp8_size = 20 * 2^30 * 1 byte = 20 GBytes
 1. Cast-To：该方法不属于量化范畴，只是简单的数值转换。可以发现灰色部分会被直接映射到 INF 或者 -INF 上。代码验证：
 
 	
-```shell
+```html
 >>> v = torch.finfo(torch.bfloat16).max
 >>> v
 3.3895313892515355e+38
 >>> tv=torch.Tensor(v)
->>> [tv.to](http://tensor.to/)(torch.float8_e5m2)
+>>> tv.to(torch.float8_e5m2)
 tensor([inf], dtype=torch.float8_e5m2)
 ```
 
