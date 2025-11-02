@@ -1,9 +1,9 @@
 ---
 cover:
-  image: ''
+  image: cover.jpg
 date: '2025-10-28T09:31:00.000Z'
 draft: true
-lastmod: '2025-10-29T06:15:00.000Z'
+lastmod: '2025-11-02T10:58:00.000Z'
 tags: []
 title: '容器镜像压缩 Gzip vs Zstd vs Pigz '
 
