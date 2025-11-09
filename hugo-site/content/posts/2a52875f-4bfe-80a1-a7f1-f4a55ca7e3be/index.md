@@ -1,9 +1,9 @@
 ---
 cover:
-  image: ''
+  image: cover.jpg
 date: '2025-11-08T04:25:00.000Z'
 draft: false
-lastmod: '2025-11-08T04:28:00.000Z'
+lastmod: '2025-11-09T08:06:00.000Z'
 tags:
 - AI
 title: DeepSeek OCR 实操和论文学习
