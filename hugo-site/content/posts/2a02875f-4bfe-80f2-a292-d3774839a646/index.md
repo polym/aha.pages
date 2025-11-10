@@ -2,8 +2,8 @@
 cover:
   image: cover.jpg
 date: '2025-11-03T13:36:00.000Z'
-draft: true
-lastmod: '2025-11-09T08:04:00.000Z'
+draft: false
+lastmod: '2025-11-10T00:55:00.000Z'
 tags:
 - 成长
 title: 「非线性成长」摘录
