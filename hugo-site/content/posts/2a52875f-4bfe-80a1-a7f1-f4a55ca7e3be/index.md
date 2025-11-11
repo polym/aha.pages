@@ -3,7 +3,7 @@ cover:
   image: cover.jpg
 date: '2025-11-08T04:25:00.000Z'
 draft: false
-lastmod: '2025-11-09T08:06:00.000Z'
+lastmod: '2025-11-11T02:06:00.000Z'
 tags:
 - AI
 title: DeepSeek OCR 实操和论文学习
@@ -75,7 +75,9 @@ self.projector = MlpProjector(Dict(
 
 ### Q3. Vision token 和 Prompt 如何作为 DeepSeek-3B 的 input？
 
-首先 Vision tokens 和 Prompt 对应的 Embedding 都是 1280 维度的，一个是视觉的 Embedding，另一个是文本的 Embedding。由于使用 CLIP 模型，会让视觉 Embedding 的分布与文本 Embedding 的分布尽可能对应。而对于 DeepSeek-3B 来说，输入的是语义，而不关心是视觉的 Embedding 还是文本的 Embedding。
+首先 Vision tokens 和 Prompt 对应的 Embedding 都是 1280 维度的，一个是视觉的 Embedding，另一个是文本的 Embedding。由于使用 CLIP 模型，会让视觉 Embedding 的分布与文本 Embedding 的分布尽可能对应。而对于 DeepSeek-3B 来说，输入的是语义，而不关心是视觉的 Embedding 还是文本的 Embedding。这个在 23 年的论文 NExT-GPT 首次被提出，如下所示：
+
+![image](32353458_image.png)
 
 # 几点畅想
 
@@ -94,4 +96,8 @@ self.projector = MlpProjector(Dict(
 1. [https://github.com/deepseek-ai/DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR)
 
 1. [deepseek-ai/DeepSeek-OCR · Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-OCR)
+
+1. [NExT-GPT: Any-to-Any Multimodal LLM](https://arxiv.org/abs/2309.05519)
+
+<br/>
 
