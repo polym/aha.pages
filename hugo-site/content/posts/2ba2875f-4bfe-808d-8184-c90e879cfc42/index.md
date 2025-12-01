@@ -1,10 +1,12 @@
 ---
 cover:
-  image: ''
+  image: cover.jpg
 date: '2025-11-29T03:18:00.000Z'
 draft: false
-lastmod: '2025-11-29T08:29:00.000Z'
-tags: []
+lastmod: '2025-12-01T13:38:00.000Z'
+tags:
+- AI
+- 推理
 title: 🤖 解构极速权重同步：从内存寻址到流⽔线引擎
 
 ---
@@ -62,6 +64,12 @@ title: 🤖 解构极速权重同步：从内存寻址到流⽔线引擎
 # 总体架构回顾
 
 ![image](8d6a2cdb_image.png)
+
+# P2P 分发 & vLLM 更新权重
+
+![image](9df37fcc_image.png)
+
+![image](ddddfe0a_image.png)
 
 # 总结 & 思考
 

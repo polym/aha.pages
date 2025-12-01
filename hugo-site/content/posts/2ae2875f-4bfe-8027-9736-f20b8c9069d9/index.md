@@ -3,8 +3,10 @@ cover:
   image: cover.jpg
 date: '2025-11-17T00:46:00.000Z'
 draft: false
-lastmod: '2025-11-21T00:51:00.000Z'
-tags: []
+lastmod: '2025-12-01T13:38:00.000Z'
+tags:
+- K8s
+- 云原生
 title: KCD Hangzhou 2025
 
 ---
