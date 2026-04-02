@@ -11,21 +11,13 @@ title: Markdown
 
 # Heading 1
 
-Link to [GitHub](https://github.com/)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.
-
 ---
 
 ## Heading 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.
-
 ---
 
 ### Heading 3
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.
 
 ---
 
@@ -68,9 +60,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mau
 
 - Toggle list
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.
-
-	1. Ordered list 1
+		1. Ordered list 1
 
 	1. Ordered list 2
 
@@ -85,15 +75,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mau
 
 > Quote 1
 
-	Quote 2
-
----
+	---
 
 💡 Callout
 
-	Callout content
-
-	💡 Inner Callout
+		💡 Inner Callout
 
 ---
 
@@ -123,11 +109,7 @@ DoIt
 
 ## Video
 
-File
-
 [//]: # (video is not supported)
-
-YouTube
 
 [//]: # (video is not supported)
 
@@ -175,10 +157,6 @@ graph TD
 [https://github.com/](https://github.com/)
 
 ## Maths
-
-Inline maths equation: $ c = \pm\sqrt{a^2 + b^2} $
-
-Block maths equation:
 
 $$ c = \pm\sqrt{a^2 + b^2} $$
 

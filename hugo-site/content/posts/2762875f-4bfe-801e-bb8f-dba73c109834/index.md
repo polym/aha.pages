@@ -15,8 +15,6 @@ title: 使用 Notion-Hugo 构建个人博客
 
 > 为什么会想要构建个人博客并且还是通过 Notion 的方式？
 
-「零秒思考」后的结果：
-
 1. Notion 中毒用户，馋 Notion 的编辑器
 
 1. 对 Notion 中记录的内容做一个系统整理并输出，尽量使用图的形式来展示
@@ -27,28 +25,18 @@ title: 使用 Notion-Hugo 构建个人博客
 
 > 为什么选择 Hugo？
 
-对 Hugo 这个项目接触比较早，大部分代码使用 Golang 实现，后续可操作性更强。
-
 ## 2. 架构图
-
-虽然「元否」和 Notion-Hugo 的作者都给出了比较详细的说明，但是在实际配置过程中，还需要熟悉 Github action、Cloudflare builder 等概念，以便理解何时触发网站构建以及发布。梳理了一个架构图以便快速理解原理，为后续优化提供思路。
 
 ![image](c81f526b_image.png)
 
 ## 3. 遇到的问题
-
-[https://github.com/HEIGE-PCloud/Notion-Hugo](https://github.com/HEIGE-PCloud/Notion-Hugo) 在将 Notion 的 page 转换成 markdown 格式时，如果遇到图片，会将原始 URL 的方式写入到 markdown 文件中，而这个 URL 是有防盗链的，1 小时后便会过期，导致图裂。
 
 
 ```bash
 https://prod-files-secure.s3.us-west-2.amazonaws.com/dc681554-1505-4cec-9a8f-844b66d5dcc8/4e9385da-92e0-4c4a-9ba1-871eb116b2e5/DSCF9506_preview.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SETVVHQ7%2F20250927%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250927T010113Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBEaCXVzLXdlc3QtMiJHMEUCIBgl6TamR&X-Amz-Signature=d9be103faf2f37cf40ca1481c3dd906b8aa9e47d57bf05b8195d9929f53eebcc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
 ```
 
-考虑到 Notion-Hugo 的转换脚本是通过 nodejs 来实现的，对我来说二开的难度较大，另外整体逻辑也不复杂，最终决定自己来重新搭建一套。在 Github 中找到了多个使用 python 来实现 notion2md 的库，经过对比和少量的 hack，完成了第一版转换脚本：[https://github.com/polym/notion2md](https://github.com/polym/notion2md)
-
 ## 4. 其他核心点
-
-以下是 Github Action workflow
 
 
 ```yaml

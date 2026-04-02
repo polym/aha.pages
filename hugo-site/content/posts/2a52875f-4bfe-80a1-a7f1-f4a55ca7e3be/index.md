@@ -12,8 +12,6 @@ title: DeepSeek OCR 实操和论文学习
 
 # 部署体验
 
-以 Nvidia 4090 + Nvidia-driver-580 驱动为例：
-
 
 ```bash
 git clone https://github.com/deepseek-ai/DeepSeek-OCR.git && cd DeepSeek-OCR
@@ -27,17 +25,11 @@ pip install -r requirement.py
 python DeepSeek-OCR-master/DeepSeek-OCR-hf/run_dpsk_ocr.py
 ```
 
-也可以直接体验：[https://huggingface.co/spaces/merterbak/DeepSeek-OCR-Demo](https://huggingface.co/spaces/merterbak/DeepSeek-OCR-Demo)
-
 ![image](73347373_image.png)
 
 # 模型架构
 
 ![image](66dd2a39_image.png)
-
-总体包含两个部分「DeepEncoder」和「LLM」。其中「DeepEncoder」由 「SAM」+「CLIP」模型结构组成，而「LLM」使用的是 DeepSeek-3B。
-
-模型推理过程如下：
 
 1. 将输入的图片进行切分，得到 n 个 16x16 patches 图片块
 
@@ -53,11 +45,7 @@ python DeepSeek-OCR-master/DeepSeek-OCR-hf/run_dpsk_ocr.py
 
 ### Q1. DeepSeek-3B 作为 backbone 时参数是否冻结？
 
-没有冻结。无论是 SAM、CLIP、DeepSeek-3B 的所有参数均可以调整。
-
 ### Q2. SAM/CLIP/DeepSeek-3B 间的维度如何对齐？
-
-利用卷积层和投影层。
 
 - 在 SAM ⇒ CLIP 中间有一个 16x 的卷积层，可以特征向量缩放到 1024。这与 CLIP 模型的特征向量维度一致。
 
@@ -74,8 +62,6 @@ self.projector = MlpProjector(Dict(
 ```
 
 ### Q3. Vision token 和 Prompt 如何作为 DeepSeek-3B 的 input？
-
-首先 Vision tokens 和 Prompt 对应的 Embedding 都是 1280 维度的，一个是视觉的 Embedding，另一个是文本的 Embedding。由于使用 CLIP 模型，会让视觉 Embedding 的分布与文本 Embedding 的分布尽可能对应。而对于 DeepSeek-3B 来说，输入的是语义，而不关心是视觉的 Embedding 还是文本的 Embedding。这个在 23 年的论文 NExT-GPT 首次被提出，如下所示：
 
 ![image](32353458_image.png)
 
