@@ -3,11 +3,11 @@ cover:
   image: cover.jpg
 date: '2025-11-29T03:18:00.000Z'
 draft: false
-lastmod: '2025-12-01T13:38:00.000Z'
+lastmod: '2026-06-04T02:11:00.000Z'
 tags:
 - AI
 - 推理
-title: 🤖 解构极速权重同步：从内存寻址到流⽔线引擎
+title: 🤖 MoonCake 解构极速权重同步：从内存寻址到流⽔线引擎
 
 ---
 
